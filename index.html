@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ePortfolio - Full Stack Development Mastery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Enhanced Hero Section Styling */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 1rem;
+    }
+    
+    .hero h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .typewriter {
+      border-right: 4px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: blink 0.75s step-end infinite;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Enhanced Section Cards */
+    .section-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .section-card:hover::before {
+      left: 100%;
+    }
+
+    .section-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .card-link {
+      transition: all 0.4s ease;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-link:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .card-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Enhanced Navigation */
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(31, 41, 55, 0.95) !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Enhanced Buttons */
+    .btn-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-hero:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+      background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    }
+
+    /* Enhanced Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    /* Enhanced Footer */
+    .footer {
+      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    }
+
+    /* Enhanced Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1.2s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.4s; }
+    .fade-in:nth-child(4) { animation-delay: 0.6s; }
+    .fade-in:nth-child(5) { animation-delay: 0.8s; }
+
+    /* Enhanced Stats Section */
+    .stats-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 4rem 0;
+      margin: 3rem 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* Enhanced Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+      
+      .typewriter {
+        font-size: 1.4rem;
+      }
+      
+      .section-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="image/image.png" alt="Logo" height="40" class="me-2" style="border-radius: 8px;">
+        <span class="gradient-text">Full Stack Portfolio</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to My <span class="text-warning">Full Stack</span> Development Portfolio </h1>
+      <h2>Mastering the Art of Complete Web Development</h2>
+      <h3 class="mt-4"><span id="typewriter" class="typewriter"></span></h3>
+      <div class="mt-5">
+        <a href="#projects" class="btn btn-hero btn-light me-3">
+          <i class="fas fa-rocket me-2"></i>Explore Projects
+        </a>
+        <a href="#skills" class="btn btn-hero btn-outline-light">
+          <i class="fas fa-code me-2"></i>View Skills
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced About Section -->
+  <section id="about" class="container my-5">
+    <div class="section-header">
+      <h2 class="display-4 fw-bold">About My Journey</h2>
+      <p class="lead text-muted">From HTML to Full Stack Mastery</p>
+    </div>
+    
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="section-card">
+          <h3 class="mb-4"><i class="fas fa-user-graduate text-primary me-2"></i>Student Developer</h3>
+          <p class="lead">Currently pursuing <strong>CET138 Full Stack Development</strong> at ISMT College, I'm passionate about creating complete web solutions that combine beautiful design with powerful functionality.</p>
+          <p>My journey in web development started with the fundamentals and has evolved into a comprehensive understanding of both frontend and backend technologies.</p>
+          <div class="mt-4">
+            <span class="badge bg-primary me-2">HTML5</span>
+            <span class="badge bg-success me-2">CSS3</span>
+            <span class="badge bg-warning me-2">JavaScript</span>
+            <span class="badge bg-info me-2">Bootstrap</span>
+            <span class="badge bg-secondary">Full Stack</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-card text-center">
+          <i class="fas fa-code-branch fa-5x text-primary mb-4"></i>
+          <h4>Development Philosophy</h4>
+          <p class="text-muted">I believe in creating web applications that are not just functional, but also provide an exceptional user experience through clean code, responsive design, and modern development practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Technologies Mastered</div>
+        </div>
+        <div class="col-md-3 stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Responsive Design</div>
+        </div>
+        <div class="col-md-3 stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Learning Mindset</div>
+        </div>
+        <div class="col-md-3 stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Growth Potential</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Skills Section -->
+  <section id="skills" class="container my-5">
+    <div class="section-header">
+      <h2 class="display-4 fw-bold">Technical Skills</h2>
+      <p class="lead text-muted">Comprehensive Web Development Expertise</p>
+    </div>
+    
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fab fa-html5 skill-icon text-danger"></i>
+        <h5>HTML5 Mastery</h5>
+        <p class="text-muted">Semantic markup, accessibility, modern standards</p>
+        <div class="progress mt-3">
+          <div class="progress-bar bg-danger" style="width: 95%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-card">
+        <i class="fab fa-css3-alt skill-icon text-primary"></i>
+        <h5>CSS3 Expertise</h5>
+        <p class="text-muted">Advanced styling, animations, responsive design</p>
+        <div class="progress mt-3">
+          <div class="progress-bar bg-primary" style="width: 90%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-card">
+        <i class="fab fa-bootstrap skill-icon text-purple"></i>
+        <h5>Bootstrap Framework</h5>
+        <p class="text-muted">Component library, grid system, utilities</p>
+        <div class="progress mt-3">
+          <div class="progress-bar bg-purple" style="width: 88%"></div>
+        </div>
+      </div>
+      
+      <div class="skill-card">
+        <i class="fab fa-js-square skill-icon text-warning"></i>
+        <h5>JavaScript Programming</h5>
+        <p class="text-muted">DOM manipulation, ES6+, modern practices</p>
+        <div class="progress mt-3">
+          <div class="progress-bar bg-warning" style="width: 85%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Projects Section -->
+  <section id="projects" class="container my-5">
+    <div class="section-header">
+      <h2 class="display-4 fw-bold">Featured Projects</h2>
+      <p class="lead text-muted">Showcasing Full Stack Development Skills</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4 fade-in">
+        <div class="card card-link h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-layer-group card-icon"></i>
+            <h5 class="card-title">Full Stack Development</h5>
+            <p class="card-text">Complete web application architecture with frontend, backend, and database integration.</p>
+            <div class="mt-3">
+              <span class="badge bg-primary me-1">Frontend</span>
+              <span class="badge bg-success me-1">Backend</span>
+              <span class="badge bg-warning">Database</span>
+            </div>
+            <a href="fullstack.html" class="btn btn-primary mt-3">Explore</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 fade-in">
+        <div class="card card-link h-100">
+          <div class="card-body text-center">
+            <i class="fab fa-html5 card-icon text-danger"></i>
+            <h5 class="card-title">HTML5 Structure</h5>
+            <p class="card-text">Semantic markup with modern HTML5 elements, accessibility features, and best practices.</p>
+            <div class="mt-3">
+              <span class="badge bg-danger me-1">Semantic</span>
+              <span class="badge bg-info me-1">Accessible</span>
+              <span class="badge bg-secondary">Modern</span>
+            </div>
+            <a href="html.html" class="btn btn-danger mt-3">View</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 fade-in">
+        <div class="card card-link h-100">
+          <div class="card-body text-center">
+            <i class="fab fa-css3-alt card-icon text-info"></i>
+            <h5 class="card-title">CSS3 Styling</h5>
+            <p class="card-text">Advanced styling techniques, animations, responsive design, and modern CSS features.</p>
+            <div class="mt-3">
+              <span class="badge bg-info me-1">Responsive</span>
+              <span class="badge bg-success me-1">Animations</span>
+              <span class="badge bg-warning">Modern</span>
+            </div>
+            <a href="css.html" class="btn btn-info text-white mt-3">Explore</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 fade-in">
+        <div class="card card-link h-100">
+          <div class="card-body text-center">
+            <i class="fab fa-bootstrap card-icon text-purple"></i>
+            <h5 class="card-title">Bootstrap Framework</h5>
+            <p class="card-text">Responsive design system with pre-built components, utilities, and mobile-first approach.</p>
+            <div class="mt-3">
+              <span class="badge bg-purple me-1">Components</span>
+              <span class="badge bg-success me-1">Grid System</span>
+              <span class="badge bg-info">Utilities</span>
+            </div>
+            <a href="Bootstrapp.html" class="btn btn-secondary mt-3">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 fade-in">
+        <div class="card card-link h-100">
+          <div class="card-body text-center">
+            <i class="fab fa-js card-icon text-warning"></i>
+            <h5 class="card-title">JavaScript Logic</h5>
+            <p class="card-text">Interactive functionality, DOM manipulation, event handling, and modern JavaScript practices.</p>
+            <div class="mt-3">
+              <span class="badge bg-warning me-1">Interactive</span>
+              <span class="badge bg-primary me-1">DOM</span>
+              <span class="badge bg-success">ES6+</span>
+            </div>
+            <a href="javascript.html" class="btn btn-warning text-dark mt-3">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Contact Section -->
+  <section id="contact" class="container my-5">
+    <div class="section-header">
+      <h2 class="display-4 fw-bold">Get In Touch</h2>
+      <p class="lead text-muted">Let's Build Something Amazing Together</p>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="section-card text-center">
+          <i class="fas fa-envelope-open-text fa-3x text-primary mb-4"></i>
+          <h4>Ready to Start Your Project?</h4>
+          <p class="text-muted">I'm always excited to work on new challenges and bring innovative ideas to life through code.</p>
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <i class="fas fa-graduation-cap fa-2x text-success mb-2"></i>
+              <h6>Education</h6>
+              <small class="text-muted">ISMT College</small>
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-book fa-2x text-primary mb-2"></i>
+              <h6>Course</h6>
+              <small class="text-muted">CET138 Full Stack</small>
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-calendar fa-2x text-warning mb-2"></i>
+              <h6>Year</h6>
+              <small class="text-muted">2025</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-md-start text-center">
+          <h5 class="mb-3"><i class="fas fa-laptop-code me-2"></i>Full Stack Portfolio</h5>
+          <p class="mb-0">Crafting digital experiences with modern web technologies</p>
+        </div>
+        <div class="col-md-6 text-md-end text-center">
+          <p class="mb-2"><strong>CET138 Full Stack Development - Assignment 1</strong></p>
+          <p class="mb-0">
+            <i class="fas fa-graduation-cap me-2"></i>ISMT College | 
+            <i class="fas fa-calendar me-2"></i>2025
+          </p>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+      <div class="text-center">
+        <p class="mb-0">
+          <i class="fas fa-heart text-danger me-1"></i>
+          Built with passion for web development excellence
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Enhanced Typewriter Effect
+    const texts = [
+      "HTML5 • CSS3 • Bootstrap • JavaScript",
+      "Frontend • Backend • Database • Full Stack",
+      "Responsive • Modern • Accessible • Professional",
+      "Code • Design • Deploy • Maintain"
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typeWriter() {
+      const currentText = texts[textIndex];
+      
+      if (isDeleting) {
+        document.getElementById("typewriter").innerHTML = currentText.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        document.getElementById("typewriter").innerHTML = currentText.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => { isDeleting = true; }, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+      }
+      
+      const speed = isDeleting ? 50 : 100;
+      setTimeout(typeWriter, speed);
+    }
+    
+    window.onload = typeWriter;
+
+    // Enhanced Scroll Animations
+    const fadeElements = document.querySelectorAll(".fade-in");
+    
+    function showOnScroll() {
+      const windowBottom = window.innerHeight + window.scrollY;
+      fadeElements.forEach(el => {
+        if (el.offsetTop < windowBottom - 100) {
+          el.style.opacity = 1;
+          el.style.transform = "translateY(0)";
+        }
+      });
+    }
+    
+    window.addEventListener("scroll", showOnScroll);
+    showOnScroll();
+
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Enhanced Card Hover Effects
+    document.querySelectorAll('.card-link').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-12px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
