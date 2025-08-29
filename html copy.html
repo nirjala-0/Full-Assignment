@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ePortfolio - HTML</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(37, 99, 235, 0.95);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="image/image.png" alt="Logo" height="40" class="me-2" style="border-radius: 8px;">
+        <span>Full Stack Portfolio</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+          <li class="nav-item"><a class="nav-link active" href="html.html">HTML</a></li>
+          <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="Bootstrapp.html">Bootstrap</a></li>
+          <li class="nav-item"><a class="nav-link" href="Javascript.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section: HTML -->
+  <div class="container mt-5 pt-5">
+    <div class="section-card">
+      <div class="section-header">
+        <i class="fab fa-html5 section-icon"></i>
+        <h2 class="section-title">HTML (HyperText Markup Language)</h2>
+      </div>
+      <div class="section-content">
+        <p><strong>HTML</strong> is the standard markup language for creating web pages. It describes the structure and content of web documents using elements and tags.</p>
+
+        <!-- Demo Diagram -->
+        <div class="demo-area text-center">
+          <svg width="350" height="250" viewBox="0 0 350 250" class="mx-auto">
+            <defs>
+              <linearGradient id="htmlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#e34c26;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#f06529;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <!-- Document outline -->
+            <rect x="10" y="10" width="330" height="230" rx="8" fill="none" stroke="#e34c26" stroke-width="2" />
+            <text x="175" y="30" text-anchor="middle" fill="#e34c26" font-size="14" font-weight="bold">&lt;html&gt;</text>
+
+            <!-- Head -->
+            <rect x="30" y="40" width="290" height="50" rx="4" fill="#fff5f5" stroke="#e34c26" stroke-width="1" />
+            <text x="50" y="55" fill="#e34c26" font-size="12" font-weight="bold">&lt;head&gt;</text>
+            <text x="70" y="70" fill="#666" font-size="10">&lt;title&gt;Page Title&lt;/title&gt;</text>
+            <text x="70" y="82" fill="#666" font-size="10">&lt;meta charset=\"UTF-8\"&gt;</text>
+
+            <!-- Body -->
+            <rect x="30" y="100" width="290" height="130" rx="4" fill="#f0f9ff" stroke="#2563eb" stroke-width="1" />
+            <text x="50" y="115" fill="#2563eb" font-size="12" font-weight="bold">&lt;body&gt;</text>
+
+            <!-- Header -->
+            <rect x="50" y="125" width="250" height="25" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" />
+            <text x="60" y="140" fill="#1e40af" font-size="10">&lt;header&gt;&lt;h1&gt;Main Title&lt;/h1&gt;&lt;/header&gt;</text>
+
+            <!-- Main -->
+            <rect x="50" y="155" width="250" height="35" rx="2" fill="#ecfdf5" stroke="#10b981" stroke-width="1" />
+            <text x="60" y="170" fill="#059669" font-size="10">&lt;main&gt;</text>
+            <text x="80" y="182" fill="#065f46" font-size="9">&lt;p&gt;Content paragraph&lt;/p&gt;</text>
+
+            <!-- Footer -->
+            <rect x="50" y="195" width="250" height="25" rx="2" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" />
+            <text x="60" y="210" fill="#d97706" font-size="10">&lt;footer&gt;Footer content&lt;/footer&gt;</text>
+          </svg>
+        </div>
+
+        <!-- Demo Area -->
+        <h5 class="mt-4"><i class="fas fa-code text-primary"></i> HTML Structure Demo:</h5>
+        <div class="html-demo">
+          <h3>Sample HTML Structure</h3>
+          <p>This paragraph demonstrates <strong>semantic HTML</strong> with proper <em>emphasis</em> and <a href="#" class="text-primary">links</a>.</p>
+          <ul>
+            <li>Unordered list item 1</li>
+            <li>Unordered list item 2</li>
+          </ul>
+          <blockquote class="border-start border-primary ps-3 fst-italic">
+            "HTML provides the foundation for all web content."
+          </blockquote>
+        </div>
+
+        <!-- Code Example -->
+        <div class="code-example">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=\"en\"&gt;
+&lt;head&gt;
+  &lt;meta charset=\"UTF-8\"&gt;
+  &lt;title&gt;My Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;p&gt;This is semantic HTML5 structure.&lt;/p&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </div>
+
+        <p><strong>Key Concepts Demonstrated:</strong> Semantic elements (header, main, nav), proper document structure, accessibility attributes, and modern HTML5 features.</p>
+
+        <!-- Methodology -->
+        <div class="mt-4">
+          <h5><i class="fas fa-clipboard-list text-danger"></i> HTML Development Methodology:</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card border-danger mb-3">
+                <div class="card-header bg-danger text-white">
+                  <i class="fas fa-code"></i> Semantic Structure Approach
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check text-danger"></i> <strong>Content First:</strong> Plan content hierarchy before markup</li>
+                    <li><i class="fas fa-check text-danger"></i> <strong>Semantic Elements:</strong> Use meaningful tags (header, nav, main, article)</li>
+                    <li><i class="fas fa-check text-danger"></i> <strong>Accessibility:</strong> Include ARIA labels and alt attributes</li>
+                    <li><i class="fas fa-check text-danger"></i> <strong>Validation:</strong> Use W3C validator to ensure clean markup</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-warning mb-3">
+                <div class="card-header bg-warning text-dark">
+                  <i class="fas fa-mobile-alt"></i> Progressive Enhancement
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-arrow-right text-warning"></i> <strong>Mobile First:</strong> Start with mobile layout structure</li>
+                    <li><i class="fas fa-arrow-right text-warning"></i> <strong>Performance:</strong> Minimize DOM depth and optimize images</li>
+                    <li><i class="fas fa-arrow-right text-warning"></i> <strong>SEO Ready:</strong> Proper meta tags and structured data</li>
+                    <li><i class="fas fa-arrow-right text-warning"></i> <strong>Future Proof:</strong> Use HTML5 standards and avoid deprecated tags</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5" style="background:#1f2937; color:white; text-align:center; padding:20px;">
+    <div class="container">
+      <p><strong>CET138 Full Stack Development - Assignment 1</strong></p>
+      <p><i class="fas fa-graduation-cap"></i> ISMT College | <i class="fas fa-calendar"></i> 2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

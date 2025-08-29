@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ePortfolio - JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(37, 99, 235, 0.95);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="image/image.png" alt="Logo" height="40" class="me-2" style="border-radius: 8px;">
+        <span>Full Stack Portfolio</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="fullstack.html">Full Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+          <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="Bootstrapp.html">Bootstrap</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Javascript.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section: JavaScript -->
+  <div class="container mt-5 pt-5">
+    <div class="section-card">
+      <div class="section-header">
+        <i class="fab fa-js-square section-icon"></i>
+        <h2 class="section-title">JavaScript</h2>
+      </div>
+      <div class="section-content">
+        <p><strong>JavaScript</strong> is a programming language that adds interactivity to web pages. It allows developers to create dynamic content such as animations, form validation, interactive buttons, and full web applications.</p>
+
+        <!-- Demo 1: Counter -->
+        <h5 class="mt-4"><i class="fas fa-plus-circle text-success"></i> Interactive Counter Demo:</h5>
+        <div class="text-center mb-3">
+          <h4 id="counterValue" class="mb-3">0</h4>
+          <button class="btn btn-success me-2" onclick="increaseCounter()">Increase</button>
+          <button class="btn btn-danger" onclick="resetCounter()">Reset</button>
+        </div>
+
+        <!-- Demo 2: Calculator -->
+        <h5 class="mt-4"><i class="fas fa-calculator text-primary"></i> Simple Calculator Demo:</h5>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <input type="number" id="num1" class="form-control mb-2" placeholder="Enter first number">
+            <input type="number" id="num2" class="form-control mb-2" placeholder="Enter second number">
+            <div class="d-flex justify-content-around mb-2">
+              <button class="btn btn-primary" onclick="calculate('add')">+</button>
+              <button class="btn btn-warning text-dark" onclick="calculate('subtract')">-</button>
+              <button class="btn btn-success" onclick="calculate('multiply')">×</button>
+              <button class="btn btn-danger" onclick="calculate('divide')">÷</button>
+            </div>
+            <h5 class="text-center">Result: <span id="calcResult">0</span></h5>
+          </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="code-example mt-4">
+// Counter Example
+let count = 0;
+function increaseCounter() {
+  count++;
+  document.getElementById("counterValue").innerText = count;
+}
+function resetCounter() {
+  count = 0;
+  document.getElementById("counterValue").innerText = count;
+}
+
+// Calculator Example
+function calculate(operation) {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  let result = 0;
+
+  if (operation === "add") result = num1 + num2;
+  else if (operation === "subtract") result = num1 - num2;
+  else if (operation === "multiply") result = num1 * num2;
+  else if (operation === "divide") result = (num2 !== 0) ? num1 / num2 : "Error";
+
+  document.getElementById("calcResult").innerText = result;
+}
+        </div>
+
+        <p><strong>Key Concepts Demonstrated:</strong> DOM manipulation, event handling, variables, functions, conditional logic, and dynamic updates.</p>
+
+        <!-- Methodology -->
+        <div class="mt-4">
+          <h5><i class="fas fa-cogs text-warning"></i> JavaScript Methodology:</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card border-primary mb-3">
+                <div class="card-header bg-primary text-white">
+                  <i class="fas fa-mouse-pointer"></i> Event-Driven Approach
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check text-primary"></i> Use event listeners for user interactions</li>
+                    <li><i class="fas fa-check text-primary"></i> Keep functions modular and reusable</li>
+                    <li><i class="fas fa-check text-primary"></i> Update DOM dynamically based on actions</li>
+                    <li><i class="fas fa-check text-primary"></i> Handle errors gracefully (e.g., division by zero)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-success mb-3">
+                <div class="card-header bg-success text-white">
+                  <i class="fas fa-lightbulb"></i> Best Practices
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-arrow-right text-success"></i> Use <code>let</code> and <code>const</code> instead of <code>var</code></li>
+                    <li><i class="fas fa-arrow-right text-success"></i> Keep logic separate from presentation</li>
+                    <li><i class="fas fa-arrow-right text-success"></i> Comment code for readability</li>
+                    <li><i class="fas fa-arrow-right text-success"></i> Validate inputs before processing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5" style="background:#1f2937; color:white; text-align:center; padding:20px;">
+    <div class="container">
+      <p><strong>CET138 Full Stack Development - Assignment 1</strong></p>
+      <p><i class="fas fa-graduation-cap"></i> ISMT College | <i class="fas fa-calendar"></i> 2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Counter Example
+    let count = 0;
+    function increaseCounter() {
+      count++;
+      document.getElementById("counterValue").innerText = count;
+    }
+    function resetCounter() {
+      count = 0;
+      document.getElementById("counterValue").innerText = count;
+    }
+
+    // Calculator Example
+    function calculate(operation) {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let result = 0;
+
+      if (operation === "add") result = num1 + num2;
+      else if (operation === "subtract") result = num1 - num2;
+      else if (operation === "multiply") result = num1 * num2;
+      else if (operation === "divide") result = (num2 !== 0) ? num1 / num2 : "Error";
+
+      document.getElementById("calcResult").innerText = result;
+    }
+  </script>
+</body>
+</html>

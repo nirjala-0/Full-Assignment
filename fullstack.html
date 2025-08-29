@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ePortfolio - Full Stack Development</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(37, 99, 235, 0.95);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="image/image.png" alt="Logo" height="40" class="me-2" style="border-radius: 8px;">
+        <span>Full Stack Portfolio</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="fullstack.html">Full Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="html.html">HTML</a></li>
+          <li class="nav-item"><a class="nav-link" href="css.html">CSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="Bootstrapp.html">Bootstrap</a></li>
+          <li class="nav-item"><a class="nav-link" href="Javascript.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section: Full Stack Development -->
+  <div class="container mt-5 pt-5">
+    <div class="section-card">
+      <div class="section-header">
+        <i class="fas fa-layer-group section-icon"></i>
+        <h2 class="section-title">What is Full Stack Development?</h2>
+      </div>
+      <div class="section-content">
+        <p><strong>Full Stack Development</strong> refers to the practice of working on both the front-end (client-side) and back-end (server-side) portions of web applications. A full stack developer has the skills to handle all aspects of web development.</p>
+
+        <!-- Demo Diagram -->
+        <div class="demo-area text-center">
+          <svg width="300" height="200" viewBox="0 0 300 200" class="mx-auto">
+            <defs>
+              <linearGradient id="frontendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="backendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#d97706;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+
+            <!-- Frontend Layer -->
+            <rect x="20" y="20" width="260" height="40" rx="8" fill="url(#frontendGrad)" />
+            <text x="150" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Frontend (Client-Side)</text>
+            <text x="150" y="50" text-anchor="middle" fill="white" font-size="10">HTML, CSS, JavaScript, React</text>
+
+            <!-- Backend Layer -->
+            <rect x="20" y="80" width="260" height="40" rx="8" fill="url(#backendGrad)" />
+            <text x="150" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Backend (Server-Side)</text>
+            <text x="150" y="110" text-anchor="middle" fill="white" font-size="10">Node.js, Python, APIs, Business Logic</text>
+
+            <!-- Database Layer -->
+            <rect x="20" y="140" width="260" height="40" rx="8" fill="url(#dbGrad)" />
+            <text x="150" y="155" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Database Layer</text>
+            <text x="150" y="170" text-anchor="middle" fill="white" font-size="10">MySQL, MongoDB, Data Storage</text>
+          </svg>
+        </div>
+
+        <!-- Key Components -->
+        <h5 class="mt-4"><i class="fas fa-info-circle text-primary"></i> Key Components:</h5>
+        <div class="row mt-3">
+          <div class="col-md-4 text-center mb-3">
+            <div class="p-3 bg-primary text-white rounded">
+              <i class="fas fa-desktop fa-2x mb-2"></i>
+              <h6>Frontend</h6>
+              <small>User Interface & Experience</small>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-3">
+            <div class="p-3 bg-success text-white rounded">
+              <i class="fas fa-server fa-2x mb-2"></i>
+              <h6>Backend</h6>
+              <small>Server Logic & APIs</small>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-3">
+            <div class="p-3 bg-warning text-white rounded">
+              <i class="fas fa-database fa-2x mb-2"></i>
+              <h6>Database</h6>
+              <small>Data Storage & Management</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Full Stack -->
+        <p><strong>Why Full Stack?</strong> Full stack developers can work independently on complete projects, understand how different parts of an application interact, and are valuable for startups and small teams where versatility is crucial.</p>
+
+        <!-- Methodology -->
+        <div class="mt-4">
+          <h5><i class="fas fa-cogs text-success"></i> Methodology & Best Practices:</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card border-success mb-3">
+                <div class="card-header bg-success text-white">
+                  <i class="fas fa-layer-group"></i> Development Approach
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check text-success"></i> <strong>Separation of Concerns:</strong> Keep frontend, backend, and database logic separate</li>
+                    <li><i class="fas fa-check text-success"></i> <strong>API-First Design:</strong> Design RESTful APIs before building interfaces</li>
+                    <li><i class="fas fa-check text-success"></i> <strong>Version Control:</strong> Use Git for tracking changes across all layers</li>
+                    <li><i class="fas fa-check text-success"></i> <strong>Testing Strategy:</strong> Unit tests for backend, integration tests for APIs</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-info mb-3">
+                <div class="card-header bg-info text-white">
+                  <i class="fas fa-tools"></i> Technology Stack Selection
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-arrow-right text-info"></i> <strong>Frontend:</strong> Choose based on project complexity (React, Vue, or vanilla JS)</li>
+                    <li><i class="fas fa-arrow-right text-info"></i> <strong>Backend:</strong> Select language/framework for scalability (Node.js, Python, etc.)</li>
+                    <li><i class="fas fa-arrow-right text-info"></i> <strong>Database:</strong> SQL for structured data, NoSQL for flexibility</li>
+                    <li><i class="fas fa-arrow-right text-info"></i> <strong>Deployment:</strong> Cloud platforms for scalability and reliability</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-5" style="background:#1f2937; color:white; text-align:center; padding:20px;">
+    <div class="container">
+      <p><strong>CET138 Full Stack Development - Assignment 1</strong></p>
+      <p><i class="fas fa-graduation-cap"></i> ISMT College | <i class="fas fa-calendar"></i> 2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
